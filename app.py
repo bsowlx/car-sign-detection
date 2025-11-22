@@ -27,7 +27,7 @@ except Exception as e:
     st.stop()
 
 # Input selection
-option = st.sidebar.radio("Source", ["Upload", "Sample"])
+option = st.sidebar.radio("Source", ["Upload", "Sample Video"])
 file = None
 is_video = False
 video_path = None
@@ -45,23 +45,13 @@ if option == "Upload":
             file = Image.open(file)
 
 else:
-    samples = {
-        "Image 1": "car/test/images/road104_png.rf.4468adcd7c2dcfc04377146de785c0a6.jpg",
-        "Image 2": "car/test/images/road112_png.rf.b765c2b5d3a2145d317b0ceadfb08464.jpg",
-        "Video": "video.mp4"
-    }
-    choice = st.selectbox("Select sample", list(samples.keys()))
-    path = samples[choice]
-    
-    if os.path.exists(path):
-        if path.endswith(".mp4"):
-            is_video = True
-            video_path = path
-            file = open(path, "rb")
-        else:
-            file = Image.open(path)
+    # Use video.mp4 as sample
+    video_path = "video.mp4"
+    if os.path.exists(video_path):
+        is_video = True
+        file = open(video_path, "rb")
     else:
-        st.error("Sample file not found.")
+        st.error("Sample video not found.")
 
 # Processing
 if file:
