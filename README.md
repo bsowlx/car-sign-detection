@@ -40,9 +40,6 @@ The images will be saved in the `report_images/` directory.
 - **Epochs**: 30
 - **Batch Size**: 57 (auto-computed)
 - **Image Size**: 640x640
-- **Optimizer**: AdamW (lr=0.000526, momentum=0.9)
-- **Device**: CUDA (Tesla T4, 15095MiB)
-- **Training Time**: 0.536 hours (~32 minutes)
 - **Dataset Size**: 3,530 training images, 801 validation images
 
 ### Final Metrics (Best Model - Epoch 26)
