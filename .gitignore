@@ -1,0 +1,10 @@
+__pycache__/
+*.pyc
+.venv/
+.vscode/
+runs/
+report_images/
+car/
+car.zip
+*.mp4
+*.ipynb_checkpoints
