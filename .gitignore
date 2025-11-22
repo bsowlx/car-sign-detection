@@ -6,5 +6,4 @@ runs/
 report_images/
 car/
 car.zip
-*.mp4
 *.ipynb_checkpoints
